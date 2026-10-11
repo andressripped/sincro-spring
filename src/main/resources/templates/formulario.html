@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo} + ' | Sincro'">Sincro</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+<header>
+    <h1>Sincro</h1>
+    <p>Modulo de gestion de clientes</p>
+</header>
+
+<main>
+
+    <h2 th:text="${titulo}">Formulario</h2>
+
+    <!-- El objeto cliente enlaza cada campo del formulario con un atributo de la entidad -->
+    <form method="post" th:action="@{/clientes/guardar}" th:object="${cliente}" class="formulario" novalidate>
+
+        <input type="hidden" th:field="*{idCliente}">
+
+        <label for="nombreCompleto">Nombre completo</label>
+        <input type="text" id="nombreCompleto" th:field="*{nombreCompleto}">
+        <span class="error" th:if="${#fields.hasErrors('nombreCompleto')}"
+              th:errors="*{nombreCompleto}"></span>
+
+        <label for="telefonoContacto">Telefono de contacto</label>
+        <input type="text" id="telefonoContacto" th:field="*{telefonoContacto}">
+        <span class="error" th:if="${#fields.hasErrors('telefonoContacto')}"
+              th:errors="*{telefonoContacto}"></span>
+
+        <label for="emailUsuario">Correo electronico</label>
+        <input type="text" id="emailUsuario" th:field="*{emailUsuario}">
+        <span class="error" th:if="${#fields.hasErrors('emailUsuario')}"
+              th:errors="*{emailUsuario}"></span>
+
+        <div class="acciones-formulario">
+            <button type="submit" class="boton">Guardar</button>
+            <a class="boton-secundario" th:href="@{/clientes}">Cancelar</a>
+        </div>
+
+    </form>
+
+</main>
+
+<footer>
+    <p>Sincro &middot; Centro Agroturistico de San Gil &middot; Ficha 3336228</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+:root {
+    --verde-principal: #1B4D3E;
+    --verde-medio: #2D6B52;
+    --verde-claro: #D9EDE2;
+    --gris-fondo: #F0F3F1;
+    --ambar: #FDF0D5;
+    --rojo: #B03A2E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--gris-fondo);
+    color: #1f2a26;
+    line-height: 1.5;
+}
+
+header {
+    background-color: var(--verde-principal);
+    color: #ffffff;
+    padding: 24px 32px;
+}
+
+header h1 {
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+main {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+h2 {
+    color: var(--verde-principal);
+    font-size: 22px;
+}
+
+.mensaje {
+    background-color: var(--ambar);
+    border-left: 4px solid var(--verde-medio);
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+thead {
+    background-color: var(--verde-claro);
+}
+
+th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e4eae7;
+    font-size: 15px;
+}
+
+th {
+    color: var(--verde-principal);
+    font-weight: 600;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.acciones {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.acciones a {
+    color: var(--verde-medio);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.acciones a:hover {
+    text-decoration: underline;
+}
+
+.enlace-rojo {
+    background: none;
+    border: none;
+    color: var(--rojo);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+}
+
+.enlace-rojo:hover {
+    text-decoration: underline;
+}
+
+.boton {
+    display: inline-block;
+    background-color: var(--verde-principal);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: var(--verde-medio);
+}
+
+.boton-secundario {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--verde-principal);
+    text-decoration: none;
+    border: 1px solid var(--verde-principal);
+    border-radius: 4px;
+}
+
+.formulario {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 6px;
+    margin-top: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--verde-principal);
+    font-size: 15px;
+}
+
+.formulario input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #c7d4ce;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.formulario input:focus {
+    outline: 2px solid var(--verde-medio);
+    border-color: transparent;
+}
+
+.acciones-formulario {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.total {
+    margin-top: 14px;
+    color: var(--verde-medio);
+    font-weight: 600;
+}
+
+.vacio {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    color: #6b7a74;
+    font-size: 14px;
+}
+
+@media (max-width: 680px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 14px;
+        background-color: #ffffff;
+        border-radius: 6px;
+        padding: 8px;
+    }
+}
+
+.error {
+    display: block;
+    color: var(--rojo);
+    font-size: 14px;
+    margin-top: -12px;
+    margin-bottom: 16px;
+}

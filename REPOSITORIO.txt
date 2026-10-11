@@ -1,0 +1,12 @@
+Repositorio del proyecto
+========================
+
+https://github.com/andressripped/sincro-spring
+
+Evidencia GA7-220501096-AA3-EV01
+Codificacion de modulos del software stand-alone, web y movil
+
+Julian Andres Albarracin Martinez
+Ficha 3336228
+Analisis y Desarrollo de Software
+Centro Agroturistico de San Gil - Regional Santander

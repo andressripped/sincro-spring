@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes | Sincro</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+<header>
+    <h1>Sincro</h1>
+    <p>Modulo de gestion de clientes</p>
+</header>
+
+<main>
+
+    <!-- El mensaje llega desde el controlador despues de guardar o eliminar -->
+    <p class="mensaje" th:if="${mensaje}" th:text="${mensaje}"></p>
+
+    <div class="barra">
+        <h2>Clientes registrados</h2>
+        <a class="boton" th:href="@{/clientes/nuevo}">Registrar cliente</a>
+    </div>
+
+    <p class="vacio" th:if="${#lists.isEmpty(clientes)}">
+        Todavia no hay clientes registrados.
+    </p>
+
+    <table th:unless="${#lists.isEmpty(clientes)}">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre completo</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Thymeleaf repite esta fila por cada cliente de la lista -->
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.idCliente}"></td>
+                <td th:text="${cliente.nombreCompleto}"></td>
+                <td th:text="${cliente.telefonoContacto}"></td>
+                <td th:text="${cliente.emailUsuario}"></td>
+                <td class="acciones">
+
+                    <a th:href="@{/clientes/editar/{id}(id=${cliente.idCliente})}">Editar</a>
+
+                    <form method="post" th:action="@{/clientes/eliminar/{id}(id=${cliente.idCliente})}">
+                        <button type="submit" class="enlace-rojo">Eliminar</button>
+                    </form>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="total" th:unless="${#lists.isEmpty(clientes)}">
+        Total: <span th:text="${total}"></span> clientes
+    </p>
+
+</main>
+
+<footer>
+    <p>Sincro &middot; Centro Agroturistico de San Gil &middot; Ficha 3336228</p>
+</footer>
+
+</body>
+</html>
